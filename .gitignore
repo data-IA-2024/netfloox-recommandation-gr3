@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+data/*.tsv.gz
 # C extensions
 *.so
 
