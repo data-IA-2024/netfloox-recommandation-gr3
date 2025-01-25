@@ -16,7 +16,7 @@ metadata_obj = MetaData(schema=schema)
 Base = declarative_base(metadata=metadata_obj)
 
 #######################################################################
-####                 Table Declarative Models                       ### 
+####                   Table Declarative Models                     ### 
 #######################################################################
 
 class title_akas(Base):
@@ -48,7 +48,7 @@ class title_basics(Base):
     isAdult        = Column(BOOLEAN)
     startYear      = Column(SMALLINT)
     endYear        = Column(SMALLINT)
-    runtimeMinutes = Column(SMALLINT)
+    runtimeMinutes = Column(INTEGER)
     genres         = Column(ARRAY(VARCHAR(24)))
 	
 	
