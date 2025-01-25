@@ -7,7 +7,7 @@ from tables.models import Base, schema
 from tables.models import title_akas, title_basics, title_crew, title_episode, title_principals, title_ratings, name_basics
 
 data_folder = './data/'
-models = [title_episode]#title_ratings, title_episode, title_crew, title_basics, name_basics, title_akas, title_principals]
+models = []#title_ratings, title_episode, title_crew, title_basics, name_basics, title_akas, title_principals]
 
 
 engine = build_engine()
