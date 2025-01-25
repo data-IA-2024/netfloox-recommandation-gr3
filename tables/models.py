@@ -42,7 +42,7 @@ class title_basics(Base):
     __tablename__  = 'title_basics'
 
     tconst         = Column(VARCHAR(12), primary_key=True, nullable=False)
-    titleType      = Column(VARCHAR(8))
+    titleType      = Column(VARCHAR(12))
     primaryTitle   = Column(VARCHAR(512))
     originalTitle  = Column(VARCHAR(512))
     isAdult        = Column(BOOLEAN)
