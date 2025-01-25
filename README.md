@@ -21,7 +21,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Connexion base de données
+## Connection base de données
 Les paramétres de connexion à la base de données doivent être mis dans un fichier `.env` (cf. `.env_template`).  
 ```bash
 # fichier .env
