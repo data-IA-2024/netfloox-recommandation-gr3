@@ -92,7 +92,8 @@ class title_ratings(Base):
 
     __tablename__ = 'title_ratings'
 
-    tconst        = Column(VARCHAR(12), primary_key=True, nullable=False)
+    id            = Column(INTEGER, primary_key=True, nullable=False)
+    tconst        = Column(VARCHAR(12))
     averageRating = Column(REAL)
     numVotes      = Column(INTEGER)
 
