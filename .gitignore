@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 data/*.tsv.gz*
+data/*.tsv
+data/data-10k/
 # C extensions
 *.so
 .vscode/
