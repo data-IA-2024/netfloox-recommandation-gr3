@@ -5,7 +5,7 @@ __pycache__/
 data/*.tsv.gz*
 # C extensions
 *.so
-
+.vscode/
 # Distribution / packaging
 .Python
 build/
