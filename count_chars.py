@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 import datetime
 from utils.timer import Timer
+from utils.table import load_tsv
 import glob
 
 data_folder = './data/'
-filenames = glob.glob(data_folder + '*.tsv')
+filenames = glob.glob(data_folder + '*.tsv.gz')
 
 chunksize = 500_000
 
@@ -24,7 +25,7 @@ for filename in filenames:
     print(filename)
     nrows = 0
     max_counts = None
-    for chunk in pd.read_csv(filename, sep='\t', chunksize=chunksize, low_memory=False, quoting=3):
+    for chunk in load_tsv(filename, chunksize=chunksize, nullchar=r'\N'):
 
         string_len = chunk.select_dtypes(include='object').apply(lambda x : x.str.len()).max().reset_index()
 

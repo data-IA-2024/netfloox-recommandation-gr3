@@ -1,7 +1,7 @@
 import pandas as pd
 
 from utils.db_connection import build_engine
-from utils.table import table_dtype_mapping, table_name, table_data, prepare_df
+from utils.table import table_dtype_mapping, table_name, table_data, prepare_df, load_tsv
 from utils.timer import Timer
 from tables.models import Base, schema
 from tables.models import title_akas, title_basics, title_crew, title_episode, title_principals, title_ratings, name_basics
@@ -26,8 +26,8 @@ with engine.connect() as conn:
         
         nb_rows_sent = 0
 
-        for chunk in pd.read_csv(data_folder + filename, sep='\t', chunksize=chunksize, quoting=3):
-            chunk = prepare_df(chunk, dtype, nullchar=r'\N')
+        for chunk in load_tsv(data_folder + filename, chunksize=chunksize, nullchar=r'\N'):
+            chunk = prepare_df(chunk, dtype)
             chunk.to_sql(name, con=engine, schema=schema, if_exists='append', index=False)
             nb_rows_sent += chunk.shape[0]
 
