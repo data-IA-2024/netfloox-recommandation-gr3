@@ -75,7 +75,7 @@ with engine.connect() as conn:
                 mode = "w"
                 header = True
 
-            df.to_csv(filename, sep="\t", mode=mode, header=header)
+            df.to_csv(filename, sep="\t", mode=mode, header=header, index=False)
             offset += chunksize
             nb_lines += chunksize
             
