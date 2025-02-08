@@ -4,7 +4,8 @@ __pycache__/
 *$py.class
 data/*.tsv.gz*
 data/*.tsv
-data/data-10k/
+data/data10k/*.tsv
+data/data10k/*.zip
 # C extensions
 *.so
 .vscode/
