@@ -7,7 +7,7 @@ import json
 
 
 class RecSysKNN :
-
+    
     def __init__(self, n, df, data_path='./data/vec_clean_data.npy'):
         self._n = n+1
         self.load_model(data_path, df)
@@ -19,9 +19,7 @@ class RecSysKNN :
     
     def recommand(self, idx):
         _, idxs = self.nbrs.kneighbors(self._X[idx,:].reshape(1, -1))
-    
         return idxs[0][1:]
-
 
 ts_file = "./data/save_data_clean.tsv"
 st.session_state["df"]=pd.read_csv(ts_file, sep="\t", encoding="utf-8", nrows=10000)   
@@ -68,12 +66,12 @@ def Recommandation():
                 #ligne = df[df["primaryTitle"] == option].index[0]
                 #distances, indices = nbrs.kneighbors(df_numeric.iloc[ligne].values.reshape(1, -1))
                 listeRecommandations = df["primaryTitle"].loc[indices]
-                st.write(f"Index recherché : {idx}, Taille du DataFrame : {len(df)}")
+                #st.write(f"Index recherché : {idx}, Taille du DataFrame : {len(df)}")
             else:
                 st.error("No numeric Data available for the model")
                 listeRecommandations = []
             print(len(listeRecommandations))
-            for film in listeRecommandations[:5]:
+            for film in listeRecommandations:
                 movie_data = requests.get(f"https://www.omdbapi.com/?apikey=1f2e1d6a&t={film}").text
                 movie_json = json.loads(movie_data)
                 poster_url = movie_json.get("Poster", "")

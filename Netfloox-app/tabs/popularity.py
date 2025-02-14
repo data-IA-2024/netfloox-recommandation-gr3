@@ -4,7 +4,7 @@ import joblib
 
 
 def Popularity() :
-    st.markdown("<h1 style='text-align: center;'>⭐ popularity index</h1>", unsafe_allow_html=True)    
+    st.markdown("<h1 style='text-align: center;'>⭐ Popularity index</h1>", unsafe_allow_html=True)    
     
     
     def reset_features():
@@ -70,6 +70,8 @@ def Popularity() :
         reset_genres()
         reset_actors()
         reset_directors()
+        reset_startYear()
+        reset_display()
         set_display(False)
 
     def predict() :
@@ -150,3 +152,4 @@ def Popularity() :
     if st.session_state.display:
         #st.session_state.features
         st.write(f"__You're popularity prediction is : {st.session_state.rating[0,0]}__")
+    

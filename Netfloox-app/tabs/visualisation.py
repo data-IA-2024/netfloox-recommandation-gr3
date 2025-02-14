@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def Visualisation():
-    st.markdown("<h1 style='text-align: center;'>📊 Visualisation des données</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>📊 Data Visualisation</h1>", unsafe_allow_html=True)
 
 # Créer des colonnes pour afficher les images en paires
     col1, col2 = st.columns(2)
