@@ -4,9 +4,9 @@ from sqlalchemy import URL, create_engine
 
 
 
-def build_dburl():
+def build_dburl(path):
     """load_params"""
-    load_dotenv()
+    load_dotenv(dotenv_path=path)
     DB_HOST = os.getenv("DB_HOST", None)
     DB_PORT = os.getenv("DB_PORT", 5432)
     DB_USER = os.getenv("DB_USER", None)
@@ -22,9 +22,9 @@ def build_dburl():
         database = DB_NAME,
     )
 
-def build_engine():
+def build_engine(path='../../config/.env'):
     """make_engine"""
-    url_object = build_dburl()
+    url_object = build_dburl(path)
     print(url_object)
     engine = create_engine(url_object)
     return engine
