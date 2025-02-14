@@ -36,12 +36,12 @@ if st.sidebar.button("Disconnect", use_container_width=True):
     st.session_state["authenticated"] = False
     st.rerun()
 
-selected_page = st.sidebar.radio("Navigation", ["Recommandation", "Popularity","Visualisation"])
+selected_page = st.sidebar.radio("Navigation", ["Recommandation", "Popularity","Visualisation"], key="nav")
 
 match selected_page:
     case "Recommandation":
         Recommandation()
-    case "Popularité":
+    case "Popularity":
         Popularity()
     case "Visualisation":
         Visualisation()
