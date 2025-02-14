@@ -9,10 +9,14 @@ Projet Système de recommandation de films
 python3 -m venv .venv
 ```
 
-2. Activation de l'environnement virtuel (Linux/MacOS)
+2. Activation de l'environnement virtuel
 
 ```bash
+# Linux/MacOS
 source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
 ```
 
 3. Installation des dépendances
@@ -22,7 +26,7 @@ pip install -r requirements.txt
 ```
 
 ## Connection base de données
-Les paramétres de connexion à la base de données doivent être mis dans un fichier `.env` (cf. `.env_template`).  
+Les paramétres de connexion à la base de données doivent être mis dans un fichier `.env` (cf. `.env_template`) dans le dossier `config`.  
 ```bash
 # fichier .env
 
