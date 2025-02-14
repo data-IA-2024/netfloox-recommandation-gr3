@@ -6,10 +6,9 @@ import os
 
 import streamlit as st
 
-load_dotenv()
+load_dotenv(dotenv_path='./config/.env')
 USERS = {
-    os.getenv("USER_1_EMAIL"): os.getenv("USER_1_PASSWORD"),
-    os.getenv("USER_2_EMAIL"): os.getenv("USER_2_PASSWORD")
+    os.getenv("EMAIL"): os.getenv("PASS"),
 }
 
 if "authenticated" not in st.session_state:
