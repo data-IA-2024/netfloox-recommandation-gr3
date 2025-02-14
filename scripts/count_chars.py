@@ -1,11 +1,10 @@
-import pandas as pd
 import numpy as np
-import datetime
+
 from utils.timer import Timer
 from utils.table import load_tsv
 import glob
 
-data_folder = './data/'
+data_folder = '../data/'
 filenames = glob.glob(data_folder + '*.tsv.gz')
 
 chunksize = 500_000
@@ -16,7 +15,7 @@ def get_max(A, B):
     C.iloc[:,1] = np.maximum(A.iloc[:,1].to_numpy(), B.iloc[:,1].to_numpy())
     return C
 
-def beauty_print(df):
+def beautify_print(df):
     return ', '.join([ ':'.join(list(map(lambda x : str(x), row.tolist()))) for i, row in df.iterrows()])
 
 
@@ -36,7 +35,7 @@ for filename in filenames:
 
         nrows += chunk.shape[0]
 
-        print(f"\rnrows {nrows:_} | {beauty_print(max_counts)} {start.elapsed()}\033[0K ", end="", flush=True)
+        print(f"\rnrows {nrows:_} | {beautify_print(max_counts)} {start.elapsed()}\033[0K ", end="", flush=True)
     max_counts.loc[max_counts.shape[0]] = ['nrows', nrows]
     max_counts.to_csv(filename + '.info.csv', index=False)
     print()
