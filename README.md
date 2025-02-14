@@ -1,5 +1,5 @@
 # Netfloox
-Projet Système de recommandation de films
+Projet Système de recommandation de films ainsi qu'un algorithme de prédiction de popularité.
 
 ## Installation
 
@@ -38,4 +38,4 @@ DB_NAME="database_name"
 ```
 
 ## Dataset
-ImDB [data](https://developer.imdb.com/non-commercial-datasets)
+Données non-commercial ImDB [data](https://developer.imdb.com/non-commercial-datasets)
