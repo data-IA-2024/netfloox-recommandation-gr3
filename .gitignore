@@ -4,8 +4,16 @@ __pycache__/
 *$py.class
 data/*.tsv.gz*
 data/*.tsv
+
 data/data10k/*.tsv
 data/data10k/*.zip
+
+data/*.npy
+data/data10k/*.tsv
+data/data10k/*.zip
+novel.npy
+save_data_clean.tsv
+
 # C extensions
 .ipynb_checkpoints/*
 *.so
