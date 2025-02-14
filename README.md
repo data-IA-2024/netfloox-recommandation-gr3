@@ -1,5 +1,6 @@
-# Netfloox
+# Netfloox Groupe 3
 Projet Système de recommandation de films ainsi qu'un algorithme de prédiction de popularité.
+
 
 ## Installation
 
