@@ -7,7 +7,7 @@ data/*.tsv
 
 data/data10k/*.tsv
 data/data10k/*.zip
-
+notebook/model/*.pkl
 data/*.npy
 data/data10k/*.tsv
 data/data10k/*.zip
